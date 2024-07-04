@@ -16,21 +16,19 @@ public class HelloG {
 
 		for (int i = 0; i < 10; i++) {
 			System.out.print(i + 1);
-			if (i+1 < 10) {
+			if (i + 1 < 10) {
 				System.out.print(", ");
-			} 
+			}
 		}
-		System.out.println("\n"+"=".repeat(30));
+		System.out.println("\n" + "=".repeat(30));
 
 		for (int i = 0; i < 100; i++) {
 			System.out.print(i + 1);
-			if(((i+1)%5) == 0) {
+			System.out.print(" ");
+			if (((i + 1) % 5) == 0) {
 				System.out.print("\n");
 			}
-			if (i+1 < 100) {
-				System.out.print(" ");
-			}
-			
+
 		}
 
 	}
