@@ -35,8 +35,8 @@ public class HelloL {
 			}
 		}
 
-		System.out.println(cnt);
-		System.out.println(sum);
+		System.out.println("소수 개수 : " + cnt);
+		System.out.println("소수 합 : " + sum);
 
 	}
 }
