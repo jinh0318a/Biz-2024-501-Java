@@ -14,7 +14,6 @@ public class WordVO {
 		
 	}
 
-
 	public WordVO(String english, String korean) {
 		this.english = english;
 		this.korean = korean;

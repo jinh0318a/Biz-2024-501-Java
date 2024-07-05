@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import com.callor.word.models.WordVO;
 import com.callor.word.service.WordService;
+import com.callor.word.utils.Line;
 
 public class WordServiceImplV1 implements WordService {
 
@@ -25,17 +26,19 @@ public class WordServiceImplV1 implements WordService {
 	protected final List<WordVO> wordList;
 	protected final Scanner fileScan;
 
-	public WordServiceImplV1(String wordFile) {
+	/*
+	 * throws Exception 만약 현재 method 에서 exception 이 발생하면 직접처리하지 않고 나를
+	 * 호출한곳(WordService 객체를 생성하는 곳)으로 exception 을 보냄
+	 */
+	public WordServiceImplV1(String wordFile) throws FileNotFoundException {
 		this.wordFile = wordFile;
 		this.wordList = new ArrayList<WordVO>();
 
 		InputStream fileInput = null;
-		try {
-			fileInput = new FileInputStream(this.wordFile);
-		} catch (FileNotFoundException e) {
-			System.out.println(this.wordFile + "파일을 읽을 수 없습니다");
-		}
+		fileInput = new FileInputStream(this.wordFile);
 		fileScan = new Scanner(fileInput);
+		
+		this.wordFileRead();
 	}
 
 	/*
@@ -53,29 +56,29 @@ public class WordServiceImplV1 implements WordService {
 	}
 
 	/*
-	 * 단어장 리스트 
-	 * ================= 
-	 * 영문단어 한글번역 
-	 * -----------------
-	 *       ...
-	 *       ...
-	 *       ...
-	 * =================      
+	 * 단어장 리스트 ================= 영문단어 한글번역 ----------------- ... ... ...
+	 * =================
 	 * 
 	 */
 	@Override
 	public void wordListPrint() {
-		List<WordVO> wordList = this.wordList;
-
+//		if (this.wordList.size() < 1)
+//			this.wordFileRead();
 		System.out.println("단어장 리스트");
-		System.out.println("=".repeat(30));
-		for (int i = 0; i < wordList.size(); i++) {
-			System.out.print(wordList.get(i).english + " " + wordList.get(i).korean + "\n");
-			if (i != wordList.size() - 1) {
-				System.out.println("-".repeat(30));
+		System.out.println("영어단어\t\t\t한글번역");
+		System.out.println(Line.dLine(50));
+		for (int i = 0; i < this.wordList.size(); i++) {
+			System.out.print(this.wordList.get(i).english + "\t\t\t" + this.wordList.get(i).korean + "\n");
+			if (i != this.wordList.size() - 1) {
+				System.out.println(Line.sLine(50));
 			}
 		}
-		System.out.println("=".repeat(30));
+		System.out.println(Line.dLine(50));
+	}
+
+	@Override
+	public WordVO getWord() {
+		return null;
 	}
 
 }
