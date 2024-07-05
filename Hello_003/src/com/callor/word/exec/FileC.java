@@ -3,9 +3,12 @@ package com.callor.word.exec;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.callor.word.models.WordVO;
+import com.callor.word.service.impl.WordServiceImplV1;
 
 /*
  * word.txt 파일을 읽어서 파일의 내용을 화면에 출력하기
@@ -36,9 +39,9 @@ public class FileC {
 			WordVO wordVO = new WordVO();
 			wordVO.english = lines[0];
 			wordVO.korean = lines[1];
-
 			System.out.println(wordVO.toString());
 		}
 
+		
 	}
 }
