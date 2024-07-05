@@ -9,4 +9,10 @@ public class WordVO {
 	public String english;
 	public String korean;
 	
+	@Override
+	public String toString() {
+		return "WordVO [english=" + english + ", korean=" + korean + "]";
+	}
+	
+	
 }

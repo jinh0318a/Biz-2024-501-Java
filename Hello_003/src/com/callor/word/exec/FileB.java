@@ -9,7 +9,7 @@ import java.util.Scanner;
  * word.txt 파일을 읽어서 파일의 내용을 화면에 출력하기
  * 
  */
-public class FileA {
+public class FileB {
 	public static void main(String[] args) {
 		String wordFile = "src/com/callor/word/word.txt";
 		// 파일, 네트워크 등을 통해서 데이터를 읽어 컴퓨터로 가져오는 도구
@@ -29,7 +29,8 @@ public class FileA {
 		while (scan.hasNext()) {
 			// Streaming 처리된 파일을 한줄 읽어오기
 			String line = scan.nextLine();
-			System.out.println(line);
+			String[] lines = line.split(":");
+			System.out.printf("영어 : %s, 번역 : %s \n", lines[0], lines[1]);
 		}
 
 	}
