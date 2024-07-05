@@ -8,4 +8,6 @@ public interface GamePlayService {
 	public void inputWord();
 
 	public void score();
+
+	public void getHint();
 }
