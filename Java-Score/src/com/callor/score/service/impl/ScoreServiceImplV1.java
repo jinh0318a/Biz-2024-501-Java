@@ -82,7 +82,7 @@ public class ScoreServiceImplV1 implements ScoreService {
 			}
 			System.out.print("총점\t평균");
 			System.out.println("\n"+Line.sLine(100));
-			System.out.printf("%5s\t%4d \t%4d \t%4d \t%d \t%4d \t%4d \t%4d \t%5d \t%.2f \n",one.sc_num, one.sc_kor, one.sc_eng, one.sc_math, one.sc_music, one.sc_art, one.sc_sw, one.sc_db, one.total(), one.average());
+			System.out.printf("%5s\t%4d\t%4d\t%4d\t%d\t%4d\t%4d\t%4d\t%5d\t%.2f\n",one.sc_num, one.sc_kor, one.sc_eng, one.sc_math, one.sc_music, one.sc_art, one.sc_sw, one.sc_db, one.total(), one.average());
 			System.out.println(Line.dLine(100));
 //			korTotal += one.sc_kor;
 //			engTotal += one.sc_eng;
